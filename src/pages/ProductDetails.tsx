@@ -1,6 +1,7 @@
 import ProductReview from '@/components/ProductReview';
 import { Button } from '@/components/ui/button';
-import { useSingleProductsQuery } from '@/redux/api/apiSlice';
+import { useSingleProductsQuery } from '@/redux/features/productsSlice/productApi';
+
 import { useParams } from 'react-router-dom';
 
 export default function ProductDetails() {
@@ -30,7 +31,7 @@ export default function ProductDetails() {
           <Button>Add to cart</Button>
         </div>
       </div>
-      <ProductReview />
+      <ProductReview id={product?._id} />
     </>
   );
 }
